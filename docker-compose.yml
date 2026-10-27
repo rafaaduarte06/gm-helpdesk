@@ -1,0 +1,58 @@
+# Ambiente local do GM HelpDesk: aplicação PHP + MariaDB (com dados fictícios) + Mailpit.
+#   docker compose up --build
+#   App:    http://localhost:8080
+#   Emails: http://localhost:8025 (Mailpit apanha todos os emails enviados pela app)
+# Os valores por omissão servem só para uso local; podem ser alterados num ficheiro .env (ver .env.example).
+name: gm-helpdesk
+
+services:
+  db:
+    image: mariadb:10.6
+    environment:
+      MARIADB_DATABASE: gm_helpdesk
+      MARIADB_USER: gm_helpdesk
+      MARIADB_PASSWORD: ${DB_PASS:-local-dev-only}
+      MARIADB_RANDOM_ROOT_PASSWORD: "yes"
+    volumes:
+      # Importados por ordem alfabética no primeiro arranque: schema.sql e depois seed.sql
+      - ./database:/docker-entrypoint-initdb.d:ro
+      - dbdata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 3s
+      timeout: 5s
+      retries: 60
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "127.0.0.1:${APP_PORT:-8080}:80"
+    environment:
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_NAME: gm_helpdesk
+      DB_USER: gm_helpdesk
+      DB_PASS: ${DB_PASS:-local-dev-only}
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      SMTP_SECURE: ""
+      SMTP_AUTH: "false"
+      MAIL_FROM: helpdesk@escola-demo.example
+      MAIL_FROM_NAME: GM HelpDesk
+      APP_URL: http://localhost:${APP_PORT:-8080}
+      APP_EMAIL_DOMAIN: escola-demo.example
+    depends_on:
+      db:
+        condition: service_healthy
+      mailpit:
+        condition: service_started
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "127.0.0.1:${MAILPIT_PORT:-8025}:8025"
+
+volumes:
+  dbdata:

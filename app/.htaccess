@@ -1,0 +1,10 @@
+# Sem listagem de diretórios
+Options -Indexes
+
+# A página inicial é o login
+DirectoryIndex login.php
+
+# Ficheiros de configuração só são lidos pelo PHP, nunca servidos diretamente
+<FilesMatch "^(config(\.local|\.example)?\.php|composer\.(json|lock))$">
+    Require all denied
+</FilesMatch>

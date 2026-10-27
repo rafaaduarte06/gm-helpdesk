@@ -1,0 +1,30 @@
+# Configuração real (credenciais)
+app/config.local.php
+.env
+.env.*
+!.env.example
+
+# Dependências (instalar com composer install)
+app/vendor/
+
+# Ficheiros enviados pelos utilizadores
+app/uploads/*
+!app/uploads/tickets/
+app/uploads/tickets/*
+!app/uploads/tickets/.gitkeep
+app/assets/img/perfil/*
+!app/assets/img/perfil/default.jpg
+
+# Logs e dumps
+error_log
+*.log
+*.sql
+!database/schema.sql
+!database/seed.sql
+
+# Sistema e IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,30 @@
+{
+    "processing": "A processar...",
+    "search": "Procurar:",
+    "lengthMenu": "Mostrar _MENU_ registos",
+    "info": "Mostrando _START_ até _END_ de _TOTAL_ registos",
+    "infoEmpty": "Mostrando 0 até 0 de 0 registos",
+    "infoFiltered": "(filtrado de _MAX_ registos no total)",
+    "infoPostFix": "",
+    "loadingRecords": "A carregar...",
+    "zeroRecords": "Não foram encontrados resultados",
+    "emptyTable": "Não existe informação disponível na tabela",
+    "paginate": {
+        "first": "Primeiro",
+        "previous": "Anterior",
+        "next": "Seguinte",
+        "last": "Último"
+    },
+    "aria": {
+        "sortAscending": ": Ordenar colunas de forma ascendente",
+        "sortDescending": ": Ordenar colunas de forma descendente"
+    },
+    "buttons": {
+        "copy": "Copiar",
+        "copyTitle": "Copiado para a área de transferência",
+        "copySuccess": {
+            "1": "Copiada uma linha para a área de transferência",
+            "_": "Copiadas %d linhas para a área de transferência"
+        }
+    }
+} 

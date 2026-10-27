@@ -1,0 +1,84 @@
+:root {
+    /* Cores principais - Esquema de azul */
+    --primary-color: #2563eb;      /* Azul principal */
+    --primary-dark: #1e40af;       /* Azul escuro */
+    --primary-light: #60a5fa;      /* Azul claro */
+    --primary-lighter: #93c5fd;    /* Azul mais claro */
+    
+    /* Cores complementares */
+    --accent-color: #7c3aed;       /* Roxo/Violeta */
+    --accent-dark: #6d28d9;
+    --accent-light: #a78bfa;
+    
+    /* Cores de estado */
+    --success-color: #10b981;      /* Verde */
+    --warning-color: #f59e0b;      /* Amarelo */
+    --danger-color: #ef4444;       /* Vermelho */
+    --info-color: #3b82f6;         /* Azul info */
+    
+    /* Cores neutras */
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    
+    /* Cores de fundo e texto */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f6;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --text-muted: #6b7280;
+    
+    /* Bordas e sombras */
+    --border-color: #e5e7eb;
+    --border-radius: 0.5rem;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    /* Espaçamentos */
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-5: 1.25rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-10: 2.5rem;
+    --spacing-12: 3rem;
+    
+    /* Fontes */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+}
+
+/* Modo escuro (preparado para implementação futura) */
+[data-theme="dark"] {
+    --bg-color: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 640px) {
+    :root {
+        --spacing-8: 1.5rem;
+        --spacing-10: 2rem;
+        --spacing-12: 2.5rem;
+    }
+} 
