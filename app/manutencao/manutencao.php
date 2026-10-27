@@ -71,7 +71,7 @@ foreach ($tickets as $ticket) {
     if ($ticket['status'] == 'aberto') $abertos++;
     if ($ticket['status'] == 'em_andamento') $em_andamento++;
     if ($ticket['status'] == 'resolvido') $resolvidos++;
-    if ($ticket['prioridade'] == '3') $alta_prioridade++;
+    if ($ticket['prioridade'] == '1') $alta_prioridade++;
 }
 
 // Incluir o sidebar
@@ -383,7 +383,7 @@ include_once '../includes/sidebar.php';
     
     /* Estilos para prioridade */
     .prioridade-1 {
-        color: #0d6efd; /* azul - baixa */
+        color: #dc3545; /* vermelho - alta */
     }
     
     .prioridade-2 {
@@ -391,7 +391,7 @@ include_once '../includes/sidebar.php';
     }
     
     .prioridade-3 {
-        color: #dc3545; /* vermelho - alta */
+        color: #0d6efd; /* azul - baixa */
     }
     
     /* Ticket Number */
@@ -921,7 +921,7 @@ include_once '../includes/sidebar.php';
                       <td class="text-center" data-label="Solicitante"><?php echo htmlspecialchars($ticket['solicitante']); ?></td>
                       <td class="text-center" data-label="Prioridade">
                         <?php 
-                        $prioridade_texto = $ticket['prioridade'] == '1' ? 'Baixa' : 
+                        $prioridade_texto = $ticket['prioridade'] == '3' ? 'Baixa' : 
                             ($ticket['prioridade'] == '2' ? 'Média' : 'Alta'); 
                         $prioridade_class = 'prioridade-' . $ticket['prioridade'];
                         ?>

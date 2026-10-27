@@ -1298,11 +1298,11 @@ include_once '../includes/sidebar.php';
                                     <p class="mb-1">
                                         <strong>Prioridade:</strong> 
                                         <span class="<?php 
-                                            if ($ticket['prioridade'] == '1') echo 'text-primary';
+                                            if ($ticket['prioridade'] == '3') echo 'text-primary';
                                             else if ($ticket['prioridade'] == '2') echo 'text-warning fw-bold';
                                             else echo 'text-danger fw-bold';
                                         ?>">
-                                            <?php echo $ticket['prioridade'] == '1' ? 'Baixa' : ($ticket['prioridade'] == '2' ? 'Média' : 'Alta'); ?>
+                                            <?php echo $ticket['prioridade'] == '3' ? 'Baixa' : ($ticket['prioridade'] == '2' ? 'Média' : 'Alta'); ?>
                                         </span>
                                     </p>
                                     <p class="mb-0">

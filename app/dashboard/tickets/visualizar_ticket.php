@@ -1363,11 +1363,11 @@ include_once '../../includes/sidebar.php';
                                 <p><strong>Utilizador:</strong> <?php echo $ticket['solicitante_nome']; ?></p>
                                 <p><strong>Prioridade:</strong> 
                                     <span style="font-weight: 600; <?php 
-                                        echo $ticket['prioridade'] == '1' ? 'color: #0d6efd;' : 
+                                        echo $ticket['prioridade'] == '3' ? 'color: #0d6efd;' : 
                                             ($ticket['prioridade'] == '2' ? 'color: #ffc107;' : 'color: #dc3545;'); 
                                     ?>">
                                         <?php 
-                                        echo $ticket['prioridade'] == '1' ? 'Baixa' : 
+                                        echo $ticket['prioridade'] == '3' ? 'Baixa' : 
                                             ($ticket['prioridade'] == '2' ? 'Média' : 'Alta'); 
                                         ?>
                                     </span>
