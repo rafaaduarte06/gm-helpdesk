@@ -135,4 +135,4 @@ My own code is released under the [MIT License](LICENSE).
 
 ---
 
-Made by **Rafael Soares Duarte**. Portfolio: https://rafael-soares-duarte.vercel.app
+Made by **Rafael Soares Duarte**. Portfolio: https://rafaelduarte-portfolio.com
